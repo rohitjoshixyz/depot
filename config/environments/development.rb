@@ -8,9 +8,14 @@ Rails.application.configure do
 
   # Do not eager load code on boot.
   config.eager_load = false
-
+config.action_cable.disable_request_forgery_protection = true
   # Show full error reports.
   config.consider_all_requests_local = true
+
+Depot::Application.configure do
+config.action_mailer.delivery_method = :test
+end
+
 
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.
